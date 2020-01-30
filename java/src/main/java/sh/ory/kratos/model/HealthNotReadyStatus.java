@@ -30,7 +30,7 @@ import java.util.Map;
 /**
  * HealthNotReadyStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T19:03:47.895898Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T21:22:10.539291Z[GMT]")
 public class HealthNotReadyStatus {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)

@@ -32,7 +32,7 @@ import sh.ory.kratos.model.FormField;
  * HTMLForm represents a HTML Form. The container can work with both HTTP Form and JSON requests
  */
 @ApiModel(description = "HTMLForm represents a HTML Form. The container can work with both HTTP Form and JSON requests")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T19:03:47.895898Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T21:22:10.539291Z[GMT]")
 public class Form {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
