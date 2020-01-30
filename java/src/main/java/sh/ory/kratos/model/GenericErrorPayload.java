@@ -31,7 +31,7 @@ import java.util.Map;
  * nolint:deadcode,unused
  */
 @ApiModel(description = "nolint:deadcode,unused")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T18:10:59.262196Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T19:03:47.895898Z[GMT]")
 public class GenericErrorPayload {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
