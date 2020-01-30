@@ -28,7 +28,7 @@ import sh.ory.kratos.model.LoginRequestMethodConfig;
 /**
  * LoginRequestMethod
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T21:22:10.539291Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T21:42:17.152371Z[GMT]")
 public class LoginRequestMethod {
   public static final String SERIALIZED_NAME_CONFIG = "config";
   @SerializedName(SERIALIZED_NAME_CONFIG)

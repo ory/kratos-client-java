@@ -13,7 +13,7 @@
 
 package sh.ory.kratos;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T21:22:10.539291Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T21:42:17.152371Z[GMT]")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
