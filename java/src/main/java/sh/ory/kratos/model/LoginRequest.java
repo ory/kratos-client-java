@@ -32,7 +32,7 @@ import sh.ory.kratos.model.LoginRequestMethod;
 /**
  * LoginRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:19:39.658296Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:49:09.934730Z[GMT]")
 public class LoginRequest {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
