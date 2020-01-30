@@ -2,7 +2,6 @@
 
 # RegistrationRequestMethod
 
-RegistrationRequestMethod registration request method
 ## Properties
 
 Name | Type | Description | Notes

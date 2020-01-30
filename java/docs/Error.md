@@ -2,7 +2,6 @@
 
 # Error
 
-Error error
 ## Properties
 
 Name | Type | Description | Notes

@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * LoginRequestMethodConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-29T15:58:23.261955Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:19:39.658296Z[GMT]")
 public class LoginRequestMethodConfig {
 
   @Override

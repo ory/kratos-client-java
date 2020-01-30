@@ -25,10 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Identity identity
+ * Identity
  */
-@ApiModel(description = "Identity identity")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-29T15:58:23.261955Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:19:39.658296Z[GMT]")
 public class Identity {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -76,10 +75,10 @@ public class Identity {
   }
 
    /**
-   * Traits traits
+   * Get traits
    * @return traits
   **/
-  @ApiModelProperty(required = true, value = "Traits traits")
+  @ApiModelProperty(required = true, value = "")
 
   public Object getTraits() {
     return traits;

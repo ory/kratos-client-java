@@ -28,10 +28,9 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * HealthNotReadyStatus health not ready status
+ * HealthNotReadyStatus
  */
-@ApiModel(description = "HealthNotReadyStatus health not ready status")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-29T15:58:23.261955Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:19:39.658296Z[GMT]")
 public class HealthNotReadyStatus {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)

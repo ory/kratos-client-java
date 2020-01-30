@@ -25,35 +25,34 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * HealthStatus
+ * CompleteSelfServiceBrowserProfileManagementFlowPayload
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:19:39.658296Z[GMT]")
-public class HealthStatus {
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
+public class CompleteSelfServiceBrowserProfileManagementFlowPayload {
+  public static final String SERIALIZED_NAME_TRAITS = "traits";
+  @SerializedName(SERIALIZED_NAME_TRAITS)
+  private Object traits;
 
 
-  public HealthStatus status(String status) {
+  public CompleteSelfServiceBrowserProfileManagementFlowPayload traits(Object traits) {
     
-    this.status = status;
+    this.traits = traits;
     return this;
   }
 
    /**
-   * Status always contains \&quot;ok\&quot;.
-   * @return status
+   * Traits contains all of the identity&#39;s traits.  type: string format: binary
+   * @return traits
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Status always contains \"ok\".")
+  @ApiModelProperty(required = true, value = "Traits contains all of the identity's traits.  type: string format: binary")
 
-  public String getStatus() {
-    return status;
+  public Object getTraits() {
+    return traits;
   }
 
 
-  public void setStatus(String status) {
-    this.status = status;
+  public void setTraits(Object traits) {
+    this.traits = traits;
   }
 
 
@@ -65,21 +64,21 @@ public class HealthStatus {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    HealthStatus healthStatus = (HealthStatus) o;
-    return Objects.equals(this.status, healthStatus.status);
+    CompleteSelfServiceBrowserProfileManagementFlowPayload completeSelfServiceBrowserProfileManagementFlowPayload = (CompleteSelfServiceBrowserProfileManagementFlowPayload) o;
+    return Objects.equals(this.traits, completeSelfServiceBrowserProfileManagementFlowPayload.traits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status);
+    return Objects.hash(traits);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class HealthStatus {\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("class CompleteSelfServiceBrowserProfileManagementFlowPayload {\n");
+    sb.append("    traits: ").append(toIndentedString(traits)).append("\n");
     sb.append("}");
     return sb.toString();
   }
