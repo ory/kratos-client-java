@@ -13,7 +13,7 @@
 
 package sh.ory.kratos;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T17:49:09.934730Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T18:10:59.262196Z[GMT]")
 public class Pair {
     private String name = "";
     private String value = "";
