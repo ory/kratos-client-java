@@ -31,7 +31,7 @@ import sh.ory.kratos.model.Error;
  * Field represents a HTML Form Field
  */
 @ApiModel(description = "Field represents a HTML Form Field")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-30T22:47:12.024441Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-31T08:32:19.997867Z[GMT]")
 public class FormField {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
