@@ -19,7 +19,7 @@ import java.util.Arrays;
 /**
  * RegistrationRequestMethodConfig
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-31T15:11:32.346740Z[GMT]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-01-31T15:33:58.757424Z[GMT]")
 public class RegistrationRequestMethodConfig {
 
   @Override
