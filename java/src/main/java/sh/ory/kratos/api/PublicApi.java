@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import sh.ory.kratos.model.CompleteSelfServiceBrowserProfileManagementFlowPayload;
+import sh.ory.kratos.model.ErrorContainer;
 import sh.ory.kratos.model.GenericError;
 import sh.ory.kratos.model.LoginRequest;
 import sh.ory.kratos.model.ProfileManagementRequest;
@@ -61,8 +62,8 @@ public class PublicApi {
 
     /**
      * Build call for completeSelfServiceBrowserProfileManagementFlow
+     * @param request Request is the request ID. (required)
      * @param body  (required)
-     * @param request Request is the request ID.  type: string (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -73,7 +74,7 @@ public class PublicApi {
         <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call completeSelfServiceBrowserProfileManagementFlowCall(CompleteSelfServiceBrowserProfileManagementFlowPayload body, String request, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call completeSelfServiceBrowserProfileManagementFlowCall(String request, CompleteSelfServiceBrowserProfileManagementFlowPayload body, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = body;
 
         // create path and map variables
@@ -107,7 +108,12 @@ public class PublicApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call completeSelfServiceBrowserProfileManagementFlowValidateBeforeCall(CompleteSelfServiceBrowserProfileManagementFlowPayload body, String request, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call completeSelfServiceBrowserProfileManagementFlowValidateBeforeCall(String request, CompleteSelfServiceBrowserProfileManagementFlowPayload body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'request' is set
+        if (request == null) {
+            throw new ApiException("Missing the required parameter 'request' when calling completeSelfServiceBrowserProfileManagementFlow(Async)");
+        }
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -115,7 +121,7 @@ public class PublicApi {
         }
         
 
-        okhttp3.Call localVarCall = completeSelfServiceBrowserProfileManagementFlowCall(body, request, _callback);
+        okhttp3.Call localVarCall = completeSelfServiceBrowserProfileManagementFlowCall(request, body, _callback);
         return localVarCall;
 
     }
@@ -123,8 +129,8 @@ public class PublicApi {
     /**
      * Complete the browser-based profile management flows
      * This endpoint completes a browser-based profile management flow. This is usually achieved by POSTing data to this endpoint.  If the provided profile data is valid against the Identity&#39;s Traits JSON Schema, the data will be updated and the browser redirected to &#x60;url.profile_ui&#x60; for further steps.  &gt; This endpoint is NOT INTENDED for API clients and only works with browsers (Chrome, Firefox, ...) and HTML Forms.  More information can be found at [ORY Kratos Profile Management Documentation](https://www.ory.sh/docs/next/kratos/self-service/flows/user-profile-management).
+     * @param request Request is the request ID. (required)
      * @param body  (required)
-     * @param request Request is the request ID.  type: string (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -133,15 +139,15 @@ public class PublicApi {
         <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
      </table>
      */
-    public void completeSelfServiceBrowserProfileManagementFlow(CompleteSelfServiceBrowserProfileManagementFlowPayload body, String request) throws ApiException {
-        completeSelfServiceBrowserProfileManagementFlowWithHttpInfo(body, request);
+    public void completeSelfServiceBrowserProfileManagementFlow(String request, CompleteSelfServiceBrowserProfileManagementFlowPayload body) throws ApiException {
+        completeSelfServiceBrowserProfileManagementFlowWithHttpInfo(request, body);
     }
 
     /**
      * Complete the browser-based profile management flows
      * This endpoint completes a browser-based profile management flow. This is usually achieved by POSTing data to this endpoint.  If the provided profile data is valid against the Identity&#39;s Traits JSON Schema, the data will be updated and the browser redirected to &#x60;url.profile_ui&#x60; for further steps.  &gt; This endpoint is NOT INTENDED for API clients and only works with browsers (Chrome, Firefox, ...) and HTML Forms.  More information can be found at [ORY Kratos Profile Management Documentation](https://www.ory.sh/docs/next/kratos/self-service/flows/user-profile-management).
+     * @param request Request is the request ID. (required)
      * @param body  (required)
-     * @param request Request is the request ID.  type: string (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -151,16 +157,16 @@ public class PublicApi {
         <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> completeSelfServiceBrowserProfileManagementFlowWithHttpInfo(CompleteSelfServiceBrowserProfileManagementFlowPayload body, String request) throws ApiException {
-        okhttp3.Call localVarCall = completeSelfServiceBrowserProfileManagementFlowValidateBeforeCall(body, request, null);
+    public ApiResponse<Void> completeSelfServiceBrowserProfileManagementFlowWithHttpInfo(String request, CompleteSelfServiceBrowserProfileManagementFlowPayload body) throws ApiException {
+        okhttp3.Call localVarCall = completeSelfServiceBrowserProfileManagementFlowValidateBeforeCall(request, body, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Complete the browser-based profile management flows (asynchronously)
      * This endpoint completes a browser-based profile management flow. This is usually achieved by POSTing data to this endpoint.  If the provided profile data is valid against the Identity&#39;s Traits JSON Schema, the data will be updated and the browser redirected to &#x60;url.profile_ui&#x60; for further steps.  &gt; This endpoint is NOT INTENDED for API clients and only works with browsers (Chrome, Firefox, ...) and HTML Forms.  More information can be found at [ORY Kratos Profile Management Documentation](https://www.ory.sh/docs/next/kratos/self-service/flows/user-profile-management).
+     * @param request Request is the request ID. (required)
      * @param body  (required)
-     * @param request Request is the request ID.  type: string (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -171,9 +177,9 @@ public class PublicApi {
         <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call completeSelfServiceBrowserProfileManagementFlowAsync(CompleteSelfServiceBrowserProfileManagementFlowPayload body, String request, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call completeSelfServiceBrowserProfileManagementFlowAsync(String request, CompleteSelfServiceBrowserProfileManagementFlowPayload body, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = completeSelfServiceBrowserProfileManagementFlowValidateBeforeCall(body, request, _callback);
+        okhttp3.Call localVarCall = completeSelfServiceBrowserProfileManagementFlowValidateBeforeCall(request, body, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -552,6 +558,127 @@ public class PublicApi {
 
         okhttp3.Call localVarCall = getSelfServiceBrowserRegistrationRequestValidateBeforeCall(request, _callback);
         Type localVarReturnType = new TypeToken<RegistrationRequest>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getSelfServiceError
+     * @param id  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> User-facing error response </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSelfServiceErrorCall(String id, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/self-service/errors";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        if (id != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("id", id));
+        }
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getSelfServiceErrorValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        
+
+        okhttp3.Call localVarCall = getSelfServiceErrorCall(id, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get user-facing self-service errors
+     * This endpoint returns the error associated with a user-facing self service errors.  When accessing this endpoint through ORY Kratos&#39; Public API, ensure that cookies are set as they are required for CSRF to work. To prevent token scanning attacks, the public endpoint does not return 404 status codes to prevent scanning attacks.  More information can be found at [ORY Kratos User User Facing Error Documentation](https://www.ory.sh/docs/kratos/self-service/flows/user-facing-errors).
+     * @param id  (optional)
+     * @return ErrorContainer
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> User-facing error response </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
+     </table>
+     */
+    public ErrorContainer getSelfServiceError(String id) throws ApiException {
+        ApiResponse<ErrorContainer> localVarResp = getSelfServiceErrorWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get user-facing self-service errors
+     * This endpoint returns the error associated with a user-facing self service errors.  When accessing this endpoint through ORY Kratos&#39; Public API, ensure that cookies are set as they are required for CSRF to work. To prevent token scanning attacks, the public endpoint does not return 404 status codes to prevent scanning attacks.  More information can be found at [ORY Kratos User User Facing Error Documentation](https://www.ory.sh/docs/kratos/self-service/flows/user-facing-errors).
+     * @param id  (optional)
+     * @return ApiResponse&lt;ErrorContainer&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> User-facing error response </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ErrorContainer> getSelfServiceErrorWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = getSelfServiceErrorValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<ErrorContainer>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get user-facing self-service errors (asynchronously)
+     * This endpoint returns the error associated with a user-facing self service errors.  When accessing this endpoint through ORY Kratos&#39; Public API, ensure that cookies are set as they are required for CSRF to work. To prevent token scanning attacks, the public endpoint does not return 404 status codes to prevent scanning attacks.  More information can be found at [ORY Kratos User User Facing Error Documentation](https://www.ory.sh/docs/kratos/self-service/flows/user-facing-errors).
+     * @param id  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> User-facing error response </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> genericError </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> genericError </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getSelfServiceErrorAsync(String id, final ApiCallback<ErrorContainer> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getSelfServiceErrorValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<ErrorContainer>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

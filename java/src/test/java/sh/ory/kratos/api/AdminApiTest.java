@@ -14,6 +14,7 @@
 package sh.ory.kratos.api;
 
 import sh.ory.kratos.ApiException;
+import sh.ory.kratos.model.ErrorContainer;
 import sh.ory.kratos.model.GenericError;
 import sh.ory.kratos.model.Identity;
 import sh.ory.kratos.model.LoginRequest;
@@ -128,6 +129,22 @@ public class AdminApiTest {
     public void getSelfServiceBrowserRegistrationRequestTest() throws ApiException {
         String request = null;
         RegistrationRequest response = api.getSelfServiceBrowserRegistrationRequest(request);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get user-facing self-service errors
+     *
+     * This endpoint returns the error associated with a user-facing self service errors.  When accessing this endpoint through ORY Kratos&#39; Public API, ensure that cookies are set as they are required for CSRF to work. To prevent token scanning attacks, the public endpoint does not return 404 status codes to prevent scanning attacks.  More information can be found at [ORY Kratos User User Facing Error Documentation](https://www.ory.sh/docs/kratos/self-service/flows/user-facing-errors).
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getSelfServiceErrorTest() throws ApiException {
+        String id = null;
+        ErrorContainer response = api.getSelfServiceError(id);
 
         // TODO: test validations
     }

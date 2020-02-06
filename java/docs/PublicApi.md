@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getSelfServiceBrowserLoginRequest**](PublicApi.md#getSelfServiceBrowserLoginRequest) | **GET** /self-service/browser/flows/requests/login | Get the request context of browser-based login user flows
 [**getSelfServiceBrowserProfileManagementRequest**](PublicApi.md#getSelfServiceBrowserProfileManagementRequest) | **GET** /self-service/browser/flows/requests/profile | Get the request context of browser-based profile management flows
 [**getSelfServiceBrowserRegistrationRequest**](PublicApi.md#getSelfServiceBrowserRegistrationRequest) | **GET** /self-service/browser/flows/requests/registration | Get the request context of browser-based registration user flows
+[**getSelfServiceError**](PublicApi.md#getSelfServiceError) | **GET** /self-service/errors | Get user-facing self-service errors
 [**initializeSelfServiceBrowserLoginFlow**](PublicApi.md#initializeSelfServiceBrowserLoginFlow) | **GET** /self-service/browser/flows/login | Initialize browser-based login user flow
 [**initializeSelfServiceBrowserLogoutFlow**](PublicApi.md#initializeSelfServiceBrowserLogoutFlow) | **GET** /self-service/browser/flows/logout | Initialize Browser-Based Logout User Flow
 [**initializeSelfServiceBrowserRegistrationFlow**](PublicApi.md#initializeSelfServiceBrowserRegistrationFlow) | **GET** /self-service/browser/flows/registration | Initialize browser-based registration user flow
@@ -17,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="completeSelfServiceBrowserProfileManagementFlow"></a>
 # **completeSelfServiceBrowserProfileManagementFlow**
-> completeSelfServiceBrowserProfileManagementFlow(body, request)
+> completeSelfServiceBrowserProfileManagementFlow(request, body)
 
 Complete the browser-based profile management flows
 
@@ -38,10 +39,10 @@ public class Example {
     defaultClient.setBasePath("http://localhost");
 
     PublicApi apiInstance = new PublicApi(defaultClient);
+    String request = "request_example"; // String | Request is the request ID.
     CompleteSelfServiceBrowserProfileManagementFlowPayload body = new CompleteSelfServiceBrowserProfileManagementFlowPayload(); // CompleteSelfServiceBrowserProfileManagementFlowPayload | 
-    String request = "request_example"; // String | Request is the request ID.  type: string
     try {
-      apiInstance.completeSelfServiceBrowserProfileManagementFlow(body, request);
+      apiInstance.completeSelfServiceBrowserProfileManagementFlow(request, body);
     } catch (ApiException e) {
       System.err.println("Exception when calling PublicApi#completeSelfServiceBrowserProfileManagementFlow");
       System.err.println("Status code: " + e.getCode());
@@ -57,8 +58,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **request** | **String**| Request is the request ID. |
  **body** | [**CompleteSelfServiceBrowserProfileManagementFlowPayload**](CompleteSelfServiceBrowserProfileManagementFlowPayload.md)|  |
- **request** | **String**| Request is the request ID.  type: string | [optional]
 
 ### Return type
 
@@ -270,6 +271,71 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | registrationRequest |  -  |
+**403** | genericError |  -  |
+**404** | genericError |  -  |
+**500** | genericError |  -  |
+
+<a name="getSelfServiceError"></a>
+# **getSelfServiceError**
+> ErrorContainer getSelfServiceError(id)
+
+Get user-facing self-service errors
+
+This endpoint returns the error associated with a user-facing self service errors.  When accessing this endpoint through ORY Kratos&#39; Public API, ensure that cookies are set as they are required for CSRF to work. To prevent token scanning attacks, the public endpoint does not return 404 status codes to prevent scanning attacks.  More information can be found at [ORY Kratos User User Facing Error Documentation](https://www.ory.sh/docs/kratos/self-service/flows/user-facing-errors).
+
+### Example
+```java
+// Import classes:
+import sh.ory.kratos.ApiClient;
+import sh.ory.kratos.ApiException;
+import sh.ory.kratos.Configuration;
+import sh.ory.kratos.models.*;
+import sh.ory.kratos.api.PublicApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+
+    PublicApi apiInstance = new PublicApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      ErrorContainer result = apiInstance.getSelfServiceError(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling PublicApi#getSelfServiceError");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | [optional]
+
+### Return type
+
+[**ErrorContainer**](ErrorContainer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User-facing error response |  -  |
 **403** | genericError |  -  |
 **404** | genericError |  -  |
 **500** | genericError |  -  |

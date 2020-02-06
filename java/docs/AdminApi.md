@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**getSelfServiceBrowserLoginRequest**](AdminApi.md#getSelfServiceBrowserLoginRequest) | **GET** /self-service/browser/flows/requests/login | Get the request context of browser-based login user flows
 [**getSelfServiceBrowserProfileManagementRequest**](AdminApi.md#getSelfServiceBrowserProfileManagementRequest) | **GET** /self-service/browser/flows/requests/profile | Get the request context of browser-based profile management flows
 [**getSelfServiceBrowserRegistrationRequest**](AdminApi.md#getSelfServiceBrowserRegistrationRequest) | **GET** /self-service/browser/flows/requests/registration | Get the request context of browser-based registration user flows
+[**getSelfServiceError**](AdminApi.md#getSelfServiceError) | **GET** /self-service/errors | Get user-facing self-service errors
 [**listIdentities**](AdminApi.md#listIdentities) | **GET** /identities | List all identities in the system
 [**updateIdentity**](AdminApi.md#updateIdentity) | **PUT** /identities/{id} | Update an identity
 
@@ -396,6 +397,71 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | registrationRequest |  -  |
+**403** | genericError |  -  |
+**404** | genericError |  -  |
+**500** | genericError |  -  |
+
+<a name="getSelfServiceError"></a>
+# **getSelfServiceError**
+> ErrorContainer getSelfServiceError(id)
+
+Get user-facing self-service errors
+
+This endpoint returns the error associated with a user-facing self service errors.  When accessing this endpoint through ORY Kratos&#39; Public API, ensure that cookies are set as they are required for CSRF to work. To prevent token scanning attacks, the public endpoint does not return 404 status codes to prevent scanning attacks.  More information can be found at [ORY Kratos User User Facing Error Documentation](https://www.ory.sh/docs/kratos/self-service/flows/user-facing-errors).
+
+### Example
+```java
+// Import classes:
+import sh.ory.kratos.ApiClient;
+import sh.ory.kratos.ApiException;
+import sh.ory.kratos.Configuration;
+import sh.ory.kratos.models.*;
+import sh.ory.kratos.api.AdminApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost");
+
+    AdminApi apiInstance = new AdminApi(defaultClient);
+    String id = "id_example"; // String | 
+    try {
+      ErrorContainer result = apiInstance.getSelfServiceError(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling AdminApi#getSelfServiceError");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | [optional]
+
+### Return type
+
+[**ErrorContainer**](ErrorContainer.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | User-facing error response |  -  |
 **403** | genericError |  -  |
 **404** | genericError |  -  |
 **500** | genericError |  -  |
