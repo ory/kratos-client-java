@@ -29,11 +29,10 @@ import sh.ory.kratos.model.Error;
 import sh.ory.kratos.model.FormField;
 
 /**
- * HTMLForm represents a HTML Form. The container can work with both HTTP Form and JSON requests
+ * RequestMethodConfig
  */
-@ApiModel(description = "HTMLForm represents a HTML Form. The container can work with both HTTP Form and JSON requests")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-04T14:27:47.887712Z[GMT]")
-public class Form {
+public class RequestMethodConfig {
   public static final String SERIALIZED_NAME_ACTION = "action";
   @SerializedName(SERIALIZED_NAME_ACTION)
   private String action;
@@ -51,7 +50,7 @@ public class Form {
   private String method;
 
 
-  public Form action(String action) {
+  public RequestMethodConfig action(String action) {
     
     this.action = action;
     return this;
@@ -73,13 +72,13 @@ public class Form {
   }
 
 
-  public Form errors(List<Error> errors) {
+  public RequestMethodConfig errors(List<Error> errors) {
     
     this.errors = errors;
     return this;
   }
 
-  public Form addErrorsItem(Error errorsItem) {
+  public RequestMethodConfig addErrorsItem(Error errorsItem) {
     if (this.errors == null) {
       this.errors = new ArrayList<Error>();
     }
@@ -104,13 +103,13 @@ public class Form {
   }
 
 
-  public Form fields(List<FormField> fields) {
+  public RequestMethodConfig fields(List<FormField> fields) {
     
     this.fields = fields;
     return this;
   }
 
-  public Form addFieldsItem(FormField fieldsItem) {
+  public RequestMethodConfig addFieldsItem(FormField fieldsItem) {
     this.fields.add(fieldsItem);
     return this;
   }
@@ -131,7 +130,7 @@ public class Form {
   }
 
 
-  public Form method(String method) {
+  public RequestMethodConfig method(String method) {
     
     this.method = method;
     return this;
@@ -161,11 +160,11 @@ public class Form {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Form form = (Form) o;
-    return Objects.equals(this.action, form.action) &&
-        Objects.equals(this.errors, form.errors) &&
-        Objects.equals(this.fields, form.fields) &&
-        Objects.equals(this.method, form.method);
+    RequestMethodConfig requestMethodConfig = (RequestMethodConfig) o;
+    return Objects.equals(this.action, requestMethodConfig.action) &&
+        Objects.equals(this.errors, requestMethodConfig.errors) &&
+        Objects.equals(this.fields, requestMethodConfig.fields) &&
+        Objects.equals(this.method, requestMethodConfig.method);
   }
 
   @Override
@@ -177,7 +176,7 @@ public class Form {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Form {\n");
+    sb.append("class RequestMethodConfig {\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
     sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
     sb.append("    fields: ").append(toIndentedString(fields)).append("\n");

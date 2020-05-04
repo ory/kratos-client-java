@@ -23,64 +23,65 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import sh.ory.kratos.model.RequestMethodConfig;
 
 /**
- * ErrorContainer
+ * SettingsRequestMethod
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-04T14:27:47.887712Z[GMT]")
-public class ErrorContainer {
-  public static final String SERIALIZED_NAME_ERRORS = "errors";
-  @SerializedName(SERIALIZED_NAME_ERRORS)
-  private Object errors;
+public class SettingsRequestMethod {
+  public static final String SERIALIZED_NAME_CONFIG = "config";
+  @SerializedName(SERIALIZED_NAME_CONFIG)
+  private RequestMethodConfig config;
 
-  public static final String SERIALIZED_NAME_ID = "id";
-  @SerializedName(SERIALIZED_NAME_ID)
-  private String id;
+  public static final String SERIALIZED_NAME_METHOD = "method";
+  @SerializedName(SERIALIZED_NAME_METHOD)
+  private String method;
 
 
-  public ErrorContainer errors(Object errors) {
+  public SettingsRequestMethod config(RequestMethodConfig config) {
     
-    this.errors = errors;
+    this.config = config;
     return this;
   }
 
    /**
-   * Get errors
-   * @return errors
+   * Get config
+   * @return config
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getErrors() {
-    return errors;
+  public RequestMethodConfig getConfig() {
+    return config;
   }
 
 
-  public void setErrors(Object errors) {
-    this.errors = errors;
+  public void setConfig(RequestMethodConfig config) {
+    this.config = config;
   }
 
 
-  public ErrorContainer id(String id) {
+  public SettingsRequestMethod method(String method) {
     
-    this.id = id;
+    this.method = method;
     return this;
   }
 
    /**
-   * Get id
-   * @return id
+   * Method contains the request credentials type.
+   * @return method
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(value = "Method contains the request credentials type.")
 
-  public String getId() {
-    return id;
+  public String getMethod() {
+    return method;
   }
 
 
-  public void setId(String id) {
-    this.id = id;
+  public void setMethod(String method) {
+    this.method = method;
   }
 
 
@@ -92,23 +93,23 @@ public class ErrorContainer {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ErrorContainer errorContainer = (ErrorContainer) o;
-    return Objects.equals(this.errors, errorContainer.errors) &&
-        Objects.equals(this.id, errorContainer.id);
+    SettingsRequestMethod settingsRequestMethod = (SettingsRequestMethod) o;
+    return Objects.equals(this.config, settingsRequestMethod.config) &&
+        Objects.equals(this.method, settingsRequestMethod.method);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(errors, id);
+    return Objects.hash(config, method);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ErrorContainer {\n");
-    sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("class SettingsRequestMethod {\n");
+    sb.append("    config: ").append(toIndentedString(config)).append("\n");
+    sb.append("    method: ").append(toIndentedString(method)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -25,24 +25,25 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.threeten.bp.OffsetDateTime;
-import sh.ory.kratos.model.LoginRequestMethod;
+import sh.ory.kratos.model.Identity;
+import sh.ory.kratos.model.SettingsRequestMethod;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for LoginRequest
+ * Model tests for SettingsRequest
  */
-public class LoginRequestTest {
-    private final LoginRequest model = new LoginRequest();
+public class SettingsRequestTest {
+    private final SettingsRequest model = new SettingsRequest();
 
     /**
-     * Model tests for LoginRequest
+     * Model tests for SettingsRequest
      */
     @Test
-    public void testLoginRequest() {
-        // TODO: test LoginRequest
+    public void testSettingsRequest() {
+        // TODO: test SettingsRequest
     }
 
     /**
@@ -62,19 +63,19 @@ public class LoginRequestTest {
     }
 
     /**
-     * Test the property 'forced'
-     */
-    @Test
-    public void forcedTest() {
-        // TODO: test forced
-    }
-
-    /**
      * Test the property 'id'
      */
     @Test
     public void idTest() {
         // TODO: test id
+    }
+
+    /**
+     * Test the property 'identity'
+     */
+    @Test
+    public void identityTest() {
+        // TODO: test identity
     }
 
     /**
@@ -99,6 +100,14 @@ public class LoginRequestTest {
     @Test
     public void requestUrlTest() {
         // TODO: test requestUrl
+    }
+
+    /**
+     * Test the property 'updateSuccessful'
+     */
+    @Test
+    public void updateSuccessfulTest() {
+        // TODO: test updateSuccessful
     }
 
 }

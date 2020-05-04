@@ -27,13 +27,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import org.threeten.bp.OffsetDateTime;
-import sh.ory.kratos.model.RegistrationRequestMethod;
+import sh.ory.kratos.model.Identity;
+import sh.ory.kratos.model.SettingsRequestMethod;
 
 /**
- * RegistrationRequest
+ * This request is used when an identity wants to update settings (e.g. profile data, passwords, ...) in a selfservice manner.  For more information head over to: https://www.ory.sh/docs/kratos/selfservice/flows/user-settings-profile-management
  */
+@ApiModel(description = "This request is used when an identity wants to update settings (e.g. profile data, passwords, ...) in a selfservice manner.  For more information head over to: https://www.ory.sh/docs/kratos/selfservice/flows/user-settings-profile-management")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-04T14:27:47.887712Z[GMT]")
-public class RegistrationRequest {
+public class SettingsRequest {
   public static final String SERIALIZED_NAME_ACTIVE = "active";
   @SerializedName(SERIALIZED_NAME_ACTIVE)
   private String active;
@@ -46,30 +48,39 @@ public class RegistrationRequest {
   @SerializedName(SERIALIZED_NAME_ID)
   private String id;
 
+  public static final String SERIALIZED_NAME_IDENTITY = "identity";
+  @SerializedName(SERIALIZED_NAME_IDENTITY)
+  private Identity identity;
+
   public static final String SERIALIZED_NAME_ISSUED_AT = "issued_at";
   @SerializedName(SERIALIZED_NAME_ISSUED_AT)
   private OffsetDateTime issuedAt;
 
   public static final String SERIALIZED_NAME_METHODS = "methods";
   @SerializedName(SERIALIZED_NAME_METHODS)
-  private Map<String, RegistrationRequestMethod> methods = new HashMap<String, RegistrationRequestMethod>();
+  private Map<String, SettingsRequestMethod> methods = new HashMap<String, SettingsRequestMethod>();
 
   public static final String SERIALIZED_NAME_REQUEST_URL = "request_url";
   @SerializedName(SERIALIZED_NAME_REQUEST_URL)
   private String requestUrl;
 
+  public static final String SERIALIZED_NAME_UPDATE_SUCCESSFUL = "update_successful";
+  @SerializedName(SERIALIZED_NAME_UPDATE_SUCCESSFUL)
+  private Boolean updateSuccessful;
 
-  public RegistrationRequest active(String active) {
+
+  public SettingsRequest active(String active) {
     
     this.active = active;
     return this;
   }
 
    /**
-   * and so on.
+   * Active, if set, contains the registration method that is being used. It is initially not set.
    * @return active
   **/
-  @ApiModelProperty(required = true, value = "and so on.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Active, if set, contains the registration method that is being used. It is initially not set.")
 
   public String getActive() {
     return active;
@@ -81,17 +92,17 @@ public class RegistrationRequest {
   }
 
 
-  public RegistrationRequest expiresAt(OffsetDateTime expiresAt) {
+  public SettingsRequest expiresAt(OffsetDateTime expiresAt) {
     
     this.expiresAt = expiresAt;
     return this;
   }
 
    /**
-   * ExpiresAt is the time (UTC) when the request expires. If the user still wishes to log in, a new request has to be initiated.
+   * ExpiresAt is the time (UTC) when the request expires. If the user still wishes to update the setting, a new request has to be initiated.
    * @return expiresAt
   **/
-  @ApiModelProperty(required = true, value = "ExpiresAt is the time (UTC) when the request expires. If the user still wishes to log in, a new request has to be initiated.")
+  @ApiModelProperty(required = true, value = "ExpiresAt is the time (UTC) when the request expires. If the user still wishes to update the setting, a new request has to be initiated.")
 
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
@@ -103,7 +114,7 @@ public class RegistrationRequest {
   }
 
 
-  public RegistrationRequest id(String id) {
+  public SettingsRequest id(String id) {
     
     this.id = id;
     return this;
@@ -125,7 +136,29 @@ public class RegistrationRequest {
   }
 
 
-  public RegistrationRequest issuedAt(OffsetDateTime issuedAt) {
+  public SettingsRequest identity(Identity identity) {
+    
+    this.identity = identity;
+    return this;
+  }
+
+   /**
+   * Get identity
+   * @return identity
+  **/
+  @ApiModelProperty(required = true, value = "")
+
+  public Identity getIdentity() {
+    return identity;
+  }
+
+
+  public void setIdentity(Identity identity) {
+    this.identity = identity;
+  }
+
+
+  public SettingsRequest issuedAt(OffsetDateTime issuedAt) {
     
     this.issuedAt = issuedAt;
     return this;
@@ -147,13 +180,13 @@ public class RegistrationRequest {
   }
 
 
-  public RegistrationRequest methods(Map<String, RegistrationRequestMethod> methods) {
+  public SettingsRequest methods(Map<String, SettingsRequestMethod> methods) {
     
     this.methods = methods;
     return this;
   }
 
-  public RegistrationRequest putMethodsItem(String key, RegistrationRequestMethod methodsItem) {
+  public SettingsRequest putMethodsItem(String key, SettingsRequestMethod methodsItem) {
     this.methods.put(key, methodsItem);
     return this;
   }
@@ -164,17 +197,17 @@ public class RegistrationRequest {
   **/
   @ApiModelProperty(required = true, value = "Methods contains context for all enabled registration methods. If a registration request has been processed, but for example the password is incorrect, this will contain error messages.")
 
-  public Map<String, RegistrationRequestMethod> getMethods() {
+  public Map<String, SettingsRequestMethod> getMethods() {
     return methods;
   }
 
 
-  public void setMethods(Map<String, RegistrationRequestMethod> methods) {
+  public void setMethods(Map<String, SettingsRequestMethod> methods) {
     this.methods = methods;
   }
 
 
-  public RegistrationRequest requestUrl(String requestUrl) {
+  public SettingsRequest requestUrl(String requestUrl) {
     
     this.requestUrl = requestUrl;
     return this;
@@ -196,6 +229,28 @@ public class RegistrationRequest {
   }
 
 
+  public SettingsRequest updateSuccessful(Boolean updateSuccessful) {
+    
+    this.updateSuccessful = updateSuccessful;
+    return this;
+  }
+
+   /**
+   * UpdateSuccessful, if true, indicates that the settings request has been updated successfully with the provided data. Done will stay true when repeatedly checking. If set to true, done will revert back to false only when a request with invalid (e.g. \&quot;please use a valid phone number\&quot;) data was sent.
+   * @return updateSuccessful
+  **/
+  @ApiModelProperty(required = true, value = "UpdateSuccessful, if true, indicates that the settings request has been updated successfully with the provided data. Done will stay true when repeatedly checking. If set to true, done will revert back to false only when a request with invalid (e.g. \"please use a valid phone number\") data was sent.")
+
+  public Boolean getUpdateSuccessful() {
+    return updateSuccessful;
+  }
+
+
+  public void setUpdateSuccessful(Boolean updateSuccessful) {
+    this.updateSuccessful = updateSuccessful;
+  }
+
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -204,31 +259,35 @@ public class RegistrationRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RegistrationRequest registrationRequest = (RegistrationRequest) o;
-    return Objects.equals(this.active, registrationRequest.active) &&
-        Objects.equals(this.expiresAt, registrationRequest.expiresAt) &&
-        Objects.equals(this.id, registrationRequest.id) &&
-        Objects.equals(this.issuedAt, registrationRequest.issuedAt) &&
-        Objects.equals(this.methods, registrationRequest.methods) &&
-        Objects.equals(this.requestUrl, registrationRequest.requestUrl);
+    SettingsRequest settingsRequest = (SettingsRequest) o;
+    return Objects.equals(this.active, settingsRequest.active) &&
+        Objects.equals(this.expiresAt, settingsRequest.expiresAt) &&
+        Objects.equals(this.id, settingsRequest.id) &&
+        Objects.equals(this.identity, settingsRequest.identity) &&
+        Objects.equals(this.issuedAt, settingsRequest.issuedAt) &&
+        Objects.equals(this.methods, settingsRequest.methods) &&
+        Objects.equals(this.requestUrl, settingsRequest.requestUrl) &&
+        Objects.equals(this.updateSuccessful, settingsRequest.updateSuccessful);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(active, expiresAt, id, issuedAt, methods, requestUrl);
+    return Objects.hash(active, expiresAt, id, identity, issuedAt, methods, requestUrl, updateSuccessful);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class RegistrationRequest {\n");
+    sb.append("class SettingsRequest {\n");
     sb.append("    active: ").append(toIndentedString(active)).append("\n");
     sb.append("    expiresAt: ").append(toIndentedString(expiresAt)).append("\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
+    sb.append("    identity: ").append(toIndentedString(identity)).append("\n");
     sb.append("    issuedAt: ").append(toIndentedString(issuedAt)).append("\n");
     sb.append("    methods: ").append(toIndentedString(methods)).append("\n");
     sb.append("    requestUrl: ").append(toIndentedString(requestUrl)).append("\n");
+    sb.append("    updateSuccessful: ").append(toIndentedString(updateSuccessful)).append("\n");
     sb.append("}");
     return sb.toString();
   }
