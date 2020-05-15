@@ -25,35 +25,62 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * Version
+ * ProviderCredentialsConfig
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2020-05-15T13:37:32.110450Z[GMT]")
-public class Version {
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private String version;
+public class ProviderCredentialsConfig {
+  public static final String SERIALIZED_NAME_PROVIDER = "provider";
+  @SerializedName(SERIALIZED_NAME_PROVIDER)
+  private String provider;
+
+  public static final String SERIALIZED_NAME_SUBJECT = "subject";
+  @SerializedName(SERIALIZED_NAME_SUBJECT)
+  private String subject;
 
 
-  public Version version(String version) {
+  public ProviderCredentialsConfig provider(String provider) {
     
-    this.version = version;
+    this.provider = provider;
     return this;
   }
 
    /**
-   * Version is the service&#39;s version.
-   * @return version
+   * Get provider
+   * @return provider
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Version is the service's version.")
+  @ApiModelProperty(value = "")
 
-  public String getVersion() {
-    return version;
+  public String getProvider() {
+    return provider;
   }
 
 
-  public void setVersion(String version) {
-    this.version = version;
+  public void setProvider(String provider) {
+    this.provider = provider;
+  }
+
+
+  public ProviderCredentialsConfig subject(String subject) {
+    
+    this.subject = subject;
+    return this;
+  }
+
+   /**
+   * Get subject
+   * @return subject
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSubject() {
+    return subject;
+  }
+
+
+  public void setSubject(String subject) {
+    this.subject = subject;
   }
 
 
@@ -65,21 +92,23 @@ public class Version {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Version version = (Version) o;
-    return Objects.equals(this.version, version.version);
+    ProviderCredentialsConfig providerCredentialsConfig = (ProviderCredentialsConfig) o;
+    return Objects.equals(this.provider, providerCredentialsConfig.provider) &&
+        Objects.equals(this.subject, providerCredentialsConfig.subject);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(version);
+    return Objects.hash(provider, subject);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Version {\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
+    sb.append("class ProviderCredentialsConfig {\n");
+    sb.append("    provider: ").append(toIndentedString(provider)).append("\n");
+    sb.append("    subject: ").append(toIndentedString(subject)).append("\n");
     sb.append("}");
     return sb.toString();
   }
