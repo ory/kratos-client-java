@@ -2,7 +2,7 @@ openapi: 3.0.1
 info:
   description: Welcome to the ORY Kratos HTTP API documentation!
   title: Ory Kratos
-  version: v0.5.5-alpha.1
+  version: v0.5.5-alpha.4
 servers:
 - url: /
 paths:
@@ -3790,4 +3790,5 @@ components:
       type: apiKey
 x-forwarded-proto: string
 x-request-id: string
+x-original-swagger-version: "2.0"
 
