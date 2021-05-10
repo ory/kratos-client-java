@@ -6,12 +6,12 @@
     <packaging>jar</packaging>
     <name>kratos-client</name>
     <version>v0.6.0-alpha.10</version>
-    <url>https://github.com/openapitools/openapi-generator</url>
+    <url>https://github.com/ory/kratos-client-java</url>
     <description>OpenAPI Java</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>scm:git:git@github.com:ory/kratos-client-java.git</connection>
+        <developerConnection>scm:git:git@github.com:ory/kratos-client-java.git</developerConnection>
+        <url>https://github.com/ory/kratos-client-java</url>
     </scm>
 
     <licenses>
