@@ -28,7 +28,7 @@ import java.io.IOException;
  * SubmitSelfServiceRegistrationFlowWithPasswordMethod is used to decode the registration form payload when using the password method.
  */
 @ApiModel(description = "SubmitSelfServiceRegistrationFlowWithPasswordMethod is used to decode the registration form payload when using the password method.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:30:48.922980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:36:58.526803Z[Etc/UTC]")
 public class SubmitSelfServiceRegistrationFlowWithPasswordMethod {
   public static final String SERIALIZED_NAME_CSRF_TOKEN = "csrf_token";
   @SerializedName(SERIALIZED_NAME_CSRF_TOKEN)

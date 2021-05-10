@@ -32,7 +32,7 @@ import sh.ory.kratos.model.VolumeUsageData;
  * Volume volume
  */
 @ApiModel(description = "Volume volume")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:30:48.922980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:36:58.526803Z[Etc/UTC]")
 public class Volume {
   public static final String SERIALIZED_NAME_CREATED_AT = "CreatedAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)

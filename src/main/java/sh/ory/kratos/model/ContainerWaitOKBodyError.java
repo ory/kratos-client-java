@@ -28,7 +28,7 @@ import java.io.IOException;
  * ContainerWaitOKBodyError container waiting error, if any
  */
 @ApiModel(description = "ContainerWaitOKBodyError container waiting error, if any")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:30:48.922980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:36:58.526803Z[Etc/UTC]")
 public class ContainerWaitOKBodyError {
   public static final String SERIALIZED_NAME_MESSAGE = "Message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)

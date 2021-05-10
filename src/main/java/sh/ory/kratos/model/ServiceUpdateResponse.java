@@ -30,7 +30,7 @@ import java.util.List;
  * ServiceUpdateResponse service update response
  */
 @ApiModel(description = "ServiceUpdateResponse service update response")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:30:48.922980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:36:58.526803Z[Etc/UTC]")
 public class ServiceUpdateResponse {
   public static final String SERIALIZED_NAME_WARNINGS = "Warnings";
   @SerializedName(SERIALIZED_NAME_WARNINGS)

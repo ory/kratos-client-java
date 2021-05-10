@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateIdentity
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:30:48.922980Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-10T13:36:58.526803Z[Etc/UTC]")
 public class CreateIdentity {
   public static final String SERIALIZED_NAME_SCHEMA_ID = "schema_id";
   @SerializedName(SERIALIZED_NAME_SCHEMA_ID)

@@ -2,7 +2,7 @@
 
 Ory Kratos API
 - API version: v0.6.0-alpha.8
-  - Build date: 2021-05-10T13:30:48.922980Z[Etc/UTC]
+  - Build date: 2021-05-10T13:36:58.526803Z[Etc/UTC]
 
 Documentation for all public and administrative Ory Kratos APIs. Public and administrative APIs
 are exposed on different ports. Public APIs can face the public internet without any protection
