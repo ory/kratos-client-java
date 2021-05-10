@@ -11,7 +11,7 @@ info:
   license:
     name: Apache 2.0
   title: Ory Kratos API
-  version: v0.6.0-alpha.8
+  version: v0.6.0-alpha.10
 servers:
 - url: https://{tenant}.tenants.oryapis.com/api/kratos/{api}
   variables:
@@ -1872,6 +1872,7 @@ components:
         - value: value
           via: via
         traits: '{}'
+        test: test
         verifiable_addresses:
         - verified_at: 2000-01-23T04:56:07.000+00:00
           verified: true
@@ -1907,6 +1908,8 @@ components:
           type: string
         traits:
           type: object
+        test:
+          type: string
         verifiable_addresses:
           description: VerifiableAddresses contains all the addresses that can be
             verified by the user.
@@ -2707,6 +2710,7 @@ components:
             - value: value
               via: via
             traits: '{}'
+            test: test
             verifiable_addresses:
             - verified_at: 2000-01-23T04:56:07.000+00:00
               verified: true
@@ -2962,6 +2966,7 @@ components:
           - value: value
             via: via
           traits: '{}'
+          test: test
           verifiable_addresses:
           - verified_at: 2000-01-23T04:56:07.000+00:00
             verified: true
@@ -2984,6 +2989,7 @@ components:
             - value: value
               via: via
             traits: '{}'
+            test: test
             verifiable_addresses:
             - verified_at: 2000-01-23T04:56:07.000+00:00
               verified: true
@@ -3043,6 +3049,7 @@ components:
           - value: value
             via: via
           traits: '{}'
+          test: test
           verifiable_addresses:
           - verified_at: 2000-01-23T04:56:07.000+00:00
             verified: true
@@ -3144,6 +3151,7 @@ components:
           - value: value
             via: via
           traits: '{}'
+          test: test
           verifiable_addresses:
           - verified_at: 2000-01-23T04:56:07.000+00:00
             verified: true
@@ -3237,6 +3245,7 @@ components:
           - value: value
             via: via
           traits: '{}'
+          test: test
           verifiable_addresses:
           - verified_at: 2000-01-23T04:56:07.000+00:00
             verified: true
@@ -3306,6 +3315,7 @@ components:
             - value: value
               via: via
             traits: '{}'
+            test: test
             verifiable_addresses:
             - verified_at: 2000-01-23T04:56:07.000+00:00
               verified: true
