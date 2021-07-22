@@ -25,20 +25,18 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 
 /**
- * The state represents the state of the recovery flow.  choose_method: ask the user to choose a method (e.g. recover account via email) sent_email: the email has been sent to the user passed_challenge: the request was successful and the recovery challenge was passed.
+ * The state can either be &#x60;active&#x60; or &#x60;inactive&#x60;.
  */
-@JsonAdapter(SelfServiceRecoveryFlowState.Adapter.class)
-public enum SelfServiceRecoveryFlowState {
+@JsonAdapter(IdentityState.Adapter.class)
+public enum IdentityState {
   
-  CHOOSE_METHOD("choose_method"),
+  ACTIVE("active"),
   
-  SENT_EMAIL("sent_email"),
-  
-  PASSED_CHALLENGE("passed_challenge");
+  INACTIVE("inactive");
 
   private String value;
 
-  SelfServiceRecoveryFlowState(String value) {
+  IdentityState(String value) {
     this.value = value;
   }
 
@@ -51,8 +49,8 @@ public enum SelfServiceRecoveryFlowState {
     return String.valueOf(value);
   }
 
-  public static SelfServiceRecoveryFlowState fromValue(String value) {
-    for (SelfServiceRecoveryFlowState b : SelfServiceRecoveryFlowState.values()) {
+  public static IdentityState fromValue(String value) {
+    for (IdentityState b : IdentityState.values()) {
       if (b.value.equals(value)) {
         return b;
       }
@@ -60,16 +58,16 @@ public enum SelfServiceRecoveryFlowState {
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
 
-  public static class Adapter extends TypeAdapter<SelfServiceRecoveryFlowState> {
+  public static class Adapter extends TypeAdapter<IdentityState> {
     @Override
-    public void write(final JsonWriter jsonWriter, final SelfServiceRecoveryFlowState enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final IdentityState enumeration) throws IOException {
       jsonWriter.value(enumeration.getValue());
     }
 
     @Override
-    public SelfServiceRecoveryFlowState read(final JsonReader jsonReader) throws IOException {
+    public IdentityState read(final JsonReader jsonReader) throws IOException {
       String value = jsonReader.nextString();
-      return SelfServiceRecoveryFlowState.fromValue(value);
+      return IdentityState.fromValue(value);
     }
   }
 }

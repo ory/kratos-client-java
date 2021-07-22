@@ -13,39 +13,23 @@
 
 package sh.ory.kratos.model;
 
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
-import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-import java.io.IOException;
+import com.google.gson.annotations.SerializedName;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 
 /**
- * Model tests for HealthStatus
+ * Model tests for IdentityState
  */
-public class HealthStatusTest {
-    private final HealthStatus model = new HealthStatus();
-
+public class IdentityStateTest {
     /**
-     * Model tests for HealthStatus
+     * Model tests for IdentityState
      */
     @Test
-    public void testHealthStatus() {
-        // TODO: test HealthStatus
-    }
-
-    /**
-     * Test the property 'status'
-     */
-    @Test
-    public void statusTest() {
-        // TODO: test status
+    public void testIdentityState() {
+        // TODO: test IdentityState
     }
 
 }
