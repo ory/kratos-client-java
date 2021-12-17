@@ -32,7 +32,7 @@ import java.util.UUID;
  * Is sent when a flow is expired
  */
 @ApiModel(description = "Is sent when a flow is expired")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T15:10:36.333920271Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T16:16:15.394132631Z[Etc/UTC]")
 public class SelfServiceFlowExpiredError {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

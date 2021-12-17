@@ -38,7 +38,7 @@ import sh.ory.kratos.model.VerifiableIdentityAddress;
  * An identity can be a real human, a service, an IoT device - everything that can be described as an \&quot;actor\&quot; in a system.
  */
 @ApiModel(description = "An identity can be a real human, a service, an IoT device - everything that can be described as an \"actor\" in a system.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T15:10:36.333920271Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T16:16:15.394132631Z[Etc/UTC]")
 public class Identity {
   public static final String SERIALIZED_NAME_CREATED_AT = "created_at";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)

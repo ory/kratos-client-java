@@ -29,7 +29,7 @@ import java.time.OffsetDateTime;
  * A singular authenticator used during authentication / login.
  */
 @ApiModel(description = "A singular authenticator used during authentication / login.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T15:10:36.333920271Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T16:16:15.394132631Z[Etc/UTC]")
 public class SessionAuthenticationMethod {
   public static final String SERIALIZED_NAME_COMPLETED_AT = "completed_at";
   @SerializedName(SERIALIZED_NAME_COMPLETED_AT)

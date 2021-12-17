@@ -29,7 +29,7 @@ import sh.ory.kratos.model.SubmitSelfServiceVerificationFlowWithLinkMethodBody;
  * nolint:deadcode,unused
  */
 @ApiModel(description = "nolint:deadcode,unused")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T15:10:36.333920271Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T16:16:15.394132631Z[Etc/UTC]")
 public class SubmitSelfServiceVerificationFlowBody {
   public static final String SERIALIZED_NAME_CSRF_TOKEN = "csrf_token";
   @SerializedName(SERIALIZED_NAME_CSRF_TOKEN)

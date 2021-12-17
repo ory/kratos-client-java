@@ -30,7 +30,7 @@ import sh.ory.kratos.model.Session;
  * The Response for Registration Flows via API
  */
 @ApiModel(description = "The Response for Registration Flows via API")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T15:10:36.333920271Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-17T16:16:15.394132631Z[Etc/UTC]")
 public class SuccessfulSelfServiceRegistrationWithoutBrowser {
   public static final String SERIALIZED_NAME_IDENTITY = "identity";
   @SerializedName(SERIALIZED_NAME_IDENTITY)
