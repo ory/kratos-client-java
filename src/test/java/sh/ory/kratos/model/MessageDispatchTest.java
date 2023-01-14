@@ -21,54 +21,71 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for UpdateLoginFlowWithOidcMethod
+ * Model tests for MessageDispatch
  */
-public class UpdateLoginFlowWithOidcMethodTest {
-    private final UpdateLoginFlowWithOidcMethod model = new UpdateLoginFlowWithOidcMethod();
+public class MessageDispatchTest {
+    private final MessageDispatch model = new MessageDispatch();
 
     /**
-     * Model tests for UpdateLoginFlowWithOidcMethod
+     * Model tests for MessageDispatch
      */
     @Test
-    public void testUpdateLoginFlowWithOidcMethod() {
-        // TODO: test UpdateLoginFlowWithOidcMethod
+    public void testMessageDispatch() {
+        // TODO: test MessageDispatch
     }
 
     /**
-     * Test the property 'csrfToken'
+     * Test the property 'createdAt'
      */
     @Test
-    public void csrfTokenTest() {
-        // TODO: test csrfToken
+    public void createdAtTest() {
+        // TODO: test createdAt
     }
 
     /**
-     * Test the property 'method'
+     * Test the property 'error'
      */
     @Test
-    public void methodTest() {
-        // TODO: test method
+    public void errorTest() {
+        // TODO: test error
     }
 
     /**
-     * Test the property 'provider'
+     * Test the property 'id'
      */
     @Test
-    public void providerTest() {
-        // TODO: test provider
+    public void idTest() {
+        // TODO: test id
     }
 
     /**
-     * Test the property 'traits'
+     * Test the property 'messageId'
      */
     @Test
-    public void traitsTest() {
-        // TODO: test traits
+    public void messageIdTest() {
+        // TODO: test messageId
+    }
+
+    /**
+     * Test the property 'status'
+     */
+    @Test
+    public void statusTest() {
+        // TODO: test status
+    }
+
+    /**
+     * Test the property 'updatedAt'
+     */
+    @Test
+    public void updatedAtTest() {
+        // TODO: test updatedAt
     }
 
 }
