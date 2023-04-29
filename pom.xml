@@ -5,14 +5,14 @@
     <packaging>jar</packaging>
     <name>kratos-client</name>
 
-    <version>0.13.1</version>
+    <version>0.13.1-SNAPSHOT</version>
     <url>https://github.com/ory/kratos-client-java</url>
     <description>Java Client for Ory Kratos</description>
     <scm>
         <connection>scm:git:git@github.com:ory/kratos-client-java.git</connection>
         <developerConnection>scm:git:git@github.com:ory/kratos-client-java.git</developerConnection>
         <url>https://github.com/ory/kratos-client-java</url>
-      <tag>v0.13.1</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <licenses>
