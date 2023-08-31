@@ -21,62 +21,39 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import sh.ory.kratos.model.Session;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
 /**
- * Model tests for UpdateLoginFlowWithOidcMethod
+ * Model tests for SuccessfulCodeExchangeResponse
  */
-public class UpdateLoginFlowWithOidcMethodTest {
-    private final UpdateLoginFlowWithOidcMethod model = new UpdateLoginFlowWithOidcMethod();
+public class SuccessfulCodeExchangeResponseTest {
+    private final SuccessfulCodeExchangeResponse model = new SuccessfulCodeExchangeResponse();
 
     /**
-     * Model tests for UpdateLoginFlowWithOidcMethod
+     * Model tests for SuccessfulCodeExchangeResponse
      */
     @Test
-    public void testUpdateLoginFlowWithOidcMethod() {
-        // TODO: test UpdateLoginFlowWithOidcMethod
+    public void testSuccessfulCodeExchangeResponse() {
+        // TODO: test SuccessfulCodeExchangeResponse
     }
 
     /**
-     * Test the property 'csrfToken'
+     * Test the property 'session'
      */
     @Test
-    public void csrfTokenTest() {
-        // TODO: test csrfToken
+    public void sessionTest() {
+        // TODO: test session
     }
 
     /**
-     * Test the property 'method'
+     * Test the property 'sessionToken'
      */
     @Test
-    public void methodTest() {
-        // TODO: test method
-    }
-
-    /**
-     * Test the property 'provider'
-     */
-    @Test
-    public void providerTest() {
-        // TODO: test provider
-    }
-
-    /**
-     * Test the property 'traits'
-     */
-    @Test
-    public void traitsTest() {
-        // TODO: test traits
-    }
-
-    /**
-     * Test the property 'upstreamParameters'
-     */
-    @Test
-    public void upstreamParametersTest() {
-        // TODO: test upstreamParameters
+    public void sessionTokenTest() {
+        // TODO: test sessionToken
     }
 
 }

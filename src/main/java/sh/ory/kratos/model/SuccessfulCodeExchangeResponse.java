@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import sh.ory.kratos.model.Session;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -46,139 +47,65 @@ import java.util.Set;
 import sh.ory.kratos.JSON;
 
 /**
- * Update Recovery Flow with Link Method
+ * The Response for Registration Flows via API
  */
-@ApiModel(description = "Update Recovery Flow with Link Method")
+@ApiModel(description = "The Response for Registration Flows via API")
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-31T08:34:19.158658725Z[Etc/UTC]")
-public class UpdateRecoveryFlowWithLinkMethod {
-  public static final String SERIALIZED_NAME_CSRF_TOKEN = "csrf_token";
-  @SerializedName(SERIALIZED_NAME_CSRF_TOKEN)
-  private String csrfToken;
+public class SuccessfulCodeExchangeResponse {
+  public static final String SERIALIZED_NAME_SESSION = "session";
+  @SerializedName(SERIALIZED_NAME_SESSION)
+  private Session session;
 
-  public static final String SERIALIZED_NAME_EMAIL = "email";
-  @SerializedName(SERIALIZED_NAME_EMAIL)
-  private String email;
+  public static final String SERIALIZED_NAME_SESSION_TOKEN = "session_token";
+  @SerializedName(SERIALIZED_NAME_SESSION_TOKEN)
+  private String sessionToken;
 
-  /**
-   * Method is the method that should be used for this recovery flow  Allowed values are &#x60;link&#x60; and &#x60;code&#x60; link RecoveryStrategyLink code RecoveryStrategyCode
-   */
-  @JsonAdapter(MethodEnum.Adapter.class)
-  public enum MethodEnum {
-    LINK("link"),
-    
-    CODE("code");
-
-    private String value;
-
-    MethodEnum(String value) {
-      this.value = value;
-    }
-
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    public static MethodEnum fromValue(String value) {
-      for (MethodEnum b : MethodEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
-        }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
-    }
-
-    public static class Adapter extends TypeAdapter<MethodEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final MethodEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
-
-      @Override
-      public MethodEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return MethodEnum.fromValue(value);
-      }
-    }
+  public SuccessfulCodeExchangeResponse() {
   }
 
-  public static final String SERIALIZED_NAME_METHOD = "method";
-  @SerializedName(SERIALIZED_NAME_METHOD)
-  private MethodEnum method;
-
-  public UpdateRecoveryFlowWithLinkMethod() {
-  }
-
-  public UpdateRecoveryFlowWithLinkMethod csrfToken(String csrfToken) {
+  public SuccessfulCodeExchangeResponse session(Session session) {
     
-    this.csrfToken = csrfToken;
+    this.session = session;
     return this;
   }
 
    /**
-   * Sending the anti-csrf token is only required for browser login flows.
-   * @return csrfToken
+   * Get session
+   * @return session
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public Session getSession() {
+    return session;
+  }
+
+
+  public void setSession(Session session) {
+    this.session = session;
+  }
+
+
+  public SuccessfulCodeExchangeResponse sessionToken(String sessionToken) {
+    
+    this.sessionToken = sessionToken;
+    return this;
+  }
+
+   /**
+   * The Session Token  A session token is equivalent to a session cookie, but it can be sent in the HTTP Authorization Header:  Authorization: bearer ${session-token}  The session token is only issued for API flows, not for Browser flows!
+   * @return sessionToken
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Sending the anti-csrf token is only required for browser login flows.")
+  @ApiModelProperty(value = "The Session Token  A session token is equivalent to a session cookie, but it can be sent in the HTTP Authorization Header:  Authorization: bearer ${session-token}  The session token is only issued for API flows, not for Browser flows!")
 
-  public String getCsrfToken() {
-    return csrfToken;
+  public String getSessionToken() {
+    return sessionToken;
   }
 
 
-  public void setCsrfToken(String csrfToken) {
-    this.csrfToken = csrfToken;
-  }
-
-
-  public UpdateRecoveryFlowWithLinkMethod email(String email) {
-    
-    this.email = email;
-    return this;
-  }
-
-   /**
-   * Email to Recover  Needs to be set when initiating the flow. If the email is a registered recovery email, a recovery link will be sent. If the email is not known, a email with details on what happened will be sent instead.  format: email
-   * @return email
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Email to Recover  Needs to be set when initiating the flow. If the email is a registered recovery email, a recovery link will be sent. If the email is not known, a email with details on what happened will be sent instead.  format: email")
-
-  public String getEmail() {
-    return email;
-  }
-
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
-
-
-  public UpdateRecoveryFlowWithLinkMethod method(MethodEnum method) {
-    
-    this.method = method;
-    return this;
-  }
-
-   /**
-   * Method is the method that should be used for this recovery flow  Allowed values are &#x60;link&#x60; and &#x60;code&#x60; link RecoveryStrategyLink code RecoveryStrategyCode
-   * @return method
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Method is the method that should be used for this recovery flow  Allowed values are `link` and `code` link RecoveryStrategyLink code RecoveryStrategyCode")
-
-  public MethodEnum getMethod() {
-    return method;
-  }
-
-
-  public void setMethod(MethodEnum method) {
-    this.method = method;
+  public void setSessionToken(String sessionToken) {
+    this.sessionToken = sessionToken;
   }
 
   /**
@@ -194,9 +121,9 @@ public class UpdateRecoveryFlowWithLinkMethod {
    *
    * @param key name of the property
    * @param value value of the property
-   * @return the UpdateRecoveryFlowWithLinkMethod instance itself
+   * @return the SuccessfulCodeExchangeResponse instance itself
    */
-  public UpdateRecoveryFlowWithLinkMethod putAdditionalProperty(String key, Object value) {
+  public SuccessfulCodeExchangeResponse putAdditionalProperty(String key, Object value) {
     if (this.additionalProperties == null) {
         this.additionalProperties = new HashMap<String, Object>();
     }
@@ -235,25 +162,23 @@ public class UpdateRecoveryFlowWithLinkMethod {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateRecoveryFlowWithLinkMethod updateRecoveryFlowWithLinkMethod = (UpdateRecoveryFlowWithLinkMethod) o;
-    return Objects.equals(this.csrfToken, updateRecoveryFlowWithLinkMethod.csrfToken) &&
-        Objects.equals(this.email, updateRecoveryFlowWithLinkMethod.email) &&
-        Objects.equals(this.method, updateRecoveryFlowWithLinkMethod.method)&&
-        Objects.equals(this.additionalProperties, updateRecoveryFlowWithLinkMethod.additionalProperties);
+    SuccessfulCodeExchangeResponse successfulCodeExchangeResponse = (SuccessfulCodeExchangeResponse) o;
+    return Objects.equals(this.session, successfulCodeExchangeResponse.session) &&
+        Objects.equals(this.sessionToken, successfulCodeExchangeResponse.sessionToken)&&
+        Objects.equals(this.additionalProperties, successfulCodeExchangeResponse.additionalProperties);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(csrfToken, email, method, additionalProperties);
+    return Objects.hash(session, sessionToken, additionalProperties);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateRecoveryFlowWithLinkMethod {\n");
-    sb.append("    csrfToken: ").append(toIndentedString(csrfToken)).append("\n");
-    sb.append("    email: ").append(toIndentedString(email)).append("\n");
-    sb.append("    method: ").append(toIndentedString(method)).append("\n");
+    sb.append("class SuccessfulCodeExchangeResponse {\n");
+    sb.append("    session: ").append(toIndentedString(session)).append("\n");
+    sb.append("    sessionToken: ").append(toIndentedString(sessionToken)).append("\n");
     sb.append("    additionalProperties: ").append(toIndentedString(additionalProperties)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -277,43 +202,37 @@ public class UpdateRecoveryFlowWithLinkMethod {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("csrf_token");
-    openapiFields.add("email");
-    openapiFields.add("method");
+    openapiFields.add("session");
+    openapiFields.add("session_token");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("email");
-    openapiRequiredFields.add("method");
+    openapiRequiredFields.add("session");
   }
 
  /**
   * Validates the JSON Object and throws an exception if issues found
   *
   * @param jsonObj JSON Object
-  * @throws IOException if the JSON Object is invalid with respect to UpdateRecoveryFlowWithLinkMethod
+  * @throws IOException if the JSON Object is invalid with respect to SuccessfulCodeExchangeResponse
   */
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
       if (jsonObj == null) {
-        if (!UpdateRecoveryFlowWithLinkMethod.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in UpdateRecoveryFlowWithLinkMethod is not found in the empty JSON string", UpdateRecoveryFlowWithLinkMethod.openapiRequiredFields.toString()));
+        if (!SuccessfulCodeExchangeResponse.openapiRequiredFields.isEmpty()) { // has required fields but JSON object is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in SuccessfulCodeExchangeResponse is not found in the empty JSON string", SuccessfulCodeExchangeResponse.openapiRequiredFields.toString()));
         }
       }
 
       // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : UpdateRecoveryFlowWithLinkMethod.openapiRequiredFields) {
+      for (String requiredField : SuccessfulCodeExchangeResponse.openapiRequiredFields) {
         if (jsonObj.get(requiredField) == null) {
           throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
         }
       }
-      if ((jsonObj.get("csrf_token") != null && !jsonObj.get("csrf_token").isJsonNull()) && !jsonObj.get("csrf_token").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `csrf_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("csrf_token").toString()));
-      }
-      if (!jsonObj.get("email").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `email` to be a primitive type in the JSON string but got `%s`", jsonObj.get("email").toString()));
-      }
-      if (!jsonObj.get("method").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `method` to be a primitive type in the JSON string but got `%s`", jsonObj.get("method").toString()));
+      // validate the required field `session`
+      Session.validateJsonObject(jsonObj.getAsJsonObject("session"));
+      if ((jsonObj.get("session_token") != null && !jsonObj.get("session_token").isJsonNull()) && !jsonObj.get("session_token").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `session_token` to be a primitive type in the JSON string but got `%s`", jsonObj.get("session_token").toString()));
       }
   }
 
@@ -321,16 +240,16 @@ public class UpdateRecoveryFlowWithLinkMethod {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!UpdateRecoveryFlowWithLinkMethod.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'UpdateRecoveryFlowWithLinkMethod' and its subtypes
+       if (!SuccessfulCodeExchangeResponse.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'SuccessfulCodeExchangeResponse' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<UpdateRecoveryFlowWithLinkMethod> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(UpdateRecoveryFlowWithLinkMethod.class));
+       final TypeAdapter<SuccessfulCodeExchangeResponse> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(SuccessfulCodeExchangeResponse.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<UpdateRecoveryFlowWithLinkMethod>() {
+       return (TypeAdapter<T>) new TypeAdapter<SuccessfulCodeExchangeResponse>() {
            @Override
-           public void write(JsonWriter out, UpdateRecoveryFlowWithLinkMethod value) throws IOException {
+           public void write(JsonWriter out, SuccessfulCodeExchangeResponse value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              obj.remove("additionalProperties");
              // serialize additonal properties
@@ -353,11 +272,11 @@ public class UpdateRecoveryFlowWithLinkMethod {
            }
 
            @Override
-           public UpdateRecoveryFlowWithLinkMethod read(JsonReader in) throws IOException {
+           public SuccessfulCodeExchangeResponse read(JsonReader in) throws IOException {
              JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
              validateJsonObject(jsonObj);
              // store additional fields in the deserialized instance
-             UpdateRecoveryFlowWithLinkMethod instance = thisAdapter.fromJsonTree(jsonObj);
+             SuccessfulCodeExchangeResponse instance = thisAdapter.fromJsonTree(jsonObj);
              for (Map.Entry<String, JsonElement> entry : jsonObj.entrySet()) {
                if (!openapiFields.contains(entry.getKey())) {
                  if (entry.getValue().isJsonPrimitive()) { // primitive type
@@ -384,18 +303,18 @@ public class UpdateRecoveryFlowWithLinkMethod {
   }
 
  /**
-  * Create an instance of UpdateRecoveryFlowWithLinkMethod given an JSON string
+  * Create an instance of SuccessfulCodeExchangeResponse given an JSON string
   *
   * @param jsonString JSON string
-  * @return An instance of UpdateRecoveryFlowWithLinkMethod
-  * @throws IOException if the JSON string is invalid with respect to UpdateRecoveryFlowWithLinkMethod
+  * @return An instance of SuccessfulCodeExchangeResponse
+  * @throws IOException if the JSON string is invalid with respect to SuccessfulCodeExchangeResponse
   */
-  public static UpdateRecoveryFlowWithLinkMethod fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, UpdateRecoveryFlowWithLinkMethod.class);
+  public static SuccessfulCodeExchangeResponse fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, SuccessfulCodeExchangeResponse.class);
   }
 
  /**
-  * Convert an instance of UpdateRecoveryFlowWithLinkMethod to an JSON string
+  * Convert an instance of SuccessfulCodeExchangeResponse to an JSON string
   *
   * @return JSON string
   */
