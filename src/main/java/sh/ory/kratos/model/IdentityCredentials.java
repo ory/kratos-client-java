@@ -80,6 +80,8 @@ public class IdentityCredentials {
     LOOKUP_SECRET("lookup_secret"),
     
     WEBAUTHN("webauthn"),
+
+    PASSKEY("passkey"),
     
     CODE("code"),
     
