@@ -52,7 +52,7 @@ import sh.ory.kratos.JSON;
 /**
  * CredentialsCode represents a one time login/registration code
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T13:57:56.207308902Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T16:03:41.138363748Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class IdentityCredentialsCode {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
