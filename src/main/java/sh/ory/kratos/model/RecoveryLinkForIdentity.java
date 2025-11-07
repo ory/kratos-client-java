@@ -50,7 +50,7 @@ import sh.ory.kratos.JSON;
 /**
  * Used when an administrator creates a recovery link for an identity.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T12:32:10.413443030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T13:57:56.207308902Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class RecoveryLinkForIdentity {
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)

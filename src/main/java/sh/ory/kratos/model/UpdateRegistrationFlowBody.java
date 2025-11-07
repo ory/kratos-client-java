@@ -64,7 +64,7 @@ import com.google.gson.JsonParseException;
 
 import sh.ory.kratos.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T12:32:10.413443030Z[Etc/UTC]", comments = "Generator version: 7.7.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-11-07T13:57:56.207308902Z[Etc/UTC]", comments = "Generator version: 7.7.0")
 public class UpdateRegistrationFlowBody extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(UpdateRegistrationFlowBody.class.getName());
 
