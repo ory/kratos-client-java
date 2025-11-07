@@ -53,6 +53,9 @@ docs/IdentityWithCredentialsOidcConfig.md
 docs/IdentityWithCredentialsOidcConfigProvider.md
 docs/IdentityWithCredentialsPassword.md
 docs/IdentityWithCredentialsPasswordConfig.md
+docs/IdentityWithCredentialsSaml.md
+docs/IdentityWithCredentialsSamlConfig.md
+docs/IdentityWithCredentialsSamlConfigProvider.md
 docs/IsAlive200Response.md
 docs/IsReady503Response.md
 docs/JsonPatch.md
@@ -91,6 +94,7 @@ docs/UiContainer.md
 docs/UiNode.md
 docs/UiNodeAnchorAttributes.md
 docs/UiNodeAttributes.md
+docs/UiNodeDivisionAttributes.md
 docs/UiNodeImageAttributes.md
 docs/UiNodeInputAttributes.md
 docs/UiNodeMeta.md
@@ -106,6 +110,7 @@ docs/UpdateLoginFlowWithLookupSecretMethod.md
 docs/UpdateLoginFlowWithOidcMethod.md
 docs/UpdateLoginFlowWithPasskeyMethod.md
 docs/UpdateLoginFlowWithPasswordMethod.md
+docs/UpdateLoginFlowWithSamlMethod.md
 docs/UpdateLoginFlowWithTotpMethod.md
 docs/UpdateLoginFlowWithWebAuthnMethod.md
 docs/UpdateRecoveryFlowBody.md
@@ -117,6 +122,7 @@ docs/UpdateRegistrationFlowWithOidcMethod.md
 docs/UpdateRegistrationFlowWithPasskeyMethod.md
 docs/UpdateRegistrationFlowWithPasswordMethod.md
 docs/UpdateRegistrationFlowWithProfileMethod.md
+docs/UpdateRegistrationFlowWithSamlMethod.md
 docs/UpdateRegistrationFlowWithWebAuthnMethod.md
 docs/UpdateSettingsFlowBody.md
 docs/UpdateSettingsFlowWithLookupMethod.md
@@ -124,6 +130,7 @@ docs/UpdateSettingsFlowWithOidcMethod.md
 docs/UpdateSettingsFlowWithPasskeyMethod.md
 docs/UpdateSettingsFlowWithPasswordMethod.md
 docs/UpdateSettingsFlowWithProfileMethod.md
+docs/UpdateSettingsFlowWithSamlMethod.md
 docs/UpdateSettingsFlowWithTotpMethod.md
 docs/UpdateSettingsFlowWithWebAuthnMethod.md
 docs/UpdateVerificationFlowBody.md
@@ -208,6 +215,9 @@ src/main/java/sh/ory/kratos/model/IdentityWithCredentialsOidcConfig.java
 src/main/java/sh/ory/kratos/model/IdentityWithCredentialsOidcConfigProvider.java
 src/main/java/sh/ory/kratos/model/IdentityWithCredentialsPassword.java
 src/main/java/sh/ory/kratos/model/IdentityWithCredentialsPasswordConfig.java
+src/main/java/sh/ory/kratos/model/IdentityWithCredentialsSaml.java
+src/main/java/sh/ory/kratos/model/IdentityWithCredentialsSamlConfig.java
+src/main/java/sh/ory/kratos/model/IdentityWithCredentialsSamlConfigProvider.java
 src/main/java/sh/ory/kratos/model/IsAlive200Response.java
 src/main/java/sh/ory/kratos/model/IsReady503Response.java
 src/main/java/sh/ory/kratos/model/JsonPatch.java
@@ -245,6 +255,7 @@ src/main/java/sh/ory/kratos/model/UiContainer.java
 src/main/java/sh/ory/kratos/model/UiNode.java
 src/main/java/sh/ory/kratos/model/UiNodeAnchorAttributes.java
 src/main/java/sh/ory/kratos/model/UiNodeAttributes.java
+src/main/java/sh/ory/kratos/model/UiNodeDivisionAttributes.java
 src/main/java/sh/ory/kratos/model/UiNodeImageAttributes.java
 src/main/java/sh/ory/kratos/model/UiNodeInputAttributes.java
 src/main/java/sh/ory/kratos/model/UiNodeMeta.java
@@ -260,6 +271,7 @@ src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithLookupSecretMethod.java
 src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithOidcMethod.java
 src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithPasskeyMethod.java
 src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithPasswordMethod.java
+src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithSamlMethod.java
 src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithTotpMethod.java
 src/main/java/sh/ory/kratos/model/UpdateLoginFlowWithWebAuthnMethod.java
 src/main/java/sh/ory/kratos/model/UpdateRecoveryFlowBody.java
@@ -271,6 +283,7 @@ src/main/java/sh/ory/kratos/model/UpdateRegistrationFlowWithOidcMethod.java
 src/main/java/sh/ory/kratos/model/UpdateRegistrationFlowWithPasskeyMethod.java
 src/main/java/sh/ory/kratos/model/UpdateRegistrationFlowWithPasswordMethod.java
 src/main/java/sh/ory/kratos/model/UpdateRegistrationFlowWithProfileMethod.java
+src/main/java/sh/ory/kratos/model/UpdateRegistrationFlowWithSamlMethod.java
 src/main/java/sh/ory/kratos/model/UpdateRegistrationFlowWithWebAuthnMethod.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowBody.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithLookupMethod.java
@@ -278,6 +291,7 @@ src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithOidcMethod.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithPasskeyMethod.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithPasswordMethod.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithProfileMethod.java
+src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithSamlMethod.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithTotpMethod.java
 src/main/java/sh/ory/kratos/model/UpdateSettingsFlowWithWebAuthnMethod.java
 src/main/java/sh/ory/kratos/model/UpdateVerificationFlowBody.java
@@ -334,6 +348,9 @@ src/test/java/sh/ory/kratos/model/IdentityWithCredentialsOidcConfigTest.java
 src/test/java/sh/ory/kratos/model/IdentityWithCredentialsOidcTest.java
 src/test/java/sh/ory/kratos/model/IdentityWithCredentialsPasswordConfigTest.java
 src/test/java/sh/ory/kratos/model/IdentityWithCredentialsPasswordTest.java
+src/test/java/sh/ory/kratos/model/IdentityWithCredentialsSamlConfigProviderTest.java
+src/test/java/sh/ory/kratos/model/IdentityWithCredentialsSamlConfigTest.java
+src/test/java/sh/ory/kratos/model/IdentityWithCredentialsSamlTest.java
 src/test/java/sh/ory/kratos/model/IdentityWithCredentialsTest.java
 src/test/java/sh/ory/kratos/model/IsAlive200ResponseTest.java
 src/test/java/sh/ory/kratos/model/IsReady503ResponseTest.java
@@ -371,6 +388,7 @@ src/test/java/sh/ory/kratos/model/TokenPaginationTest.java
 src/test/java/sh/ory/kratos/model/UiContainerTest.java
 src/test/java/sh/ory/kratos/model/UiNodeAnchorAttributesTest.java
 src/test/java/sh/ory/kratos/model/UiNodeAttributesTest.java
+src/test/java/sh/ory/kratos/model/UiNodeDivisionAttributesTest.java
 src/test/java/sh/ory/kratos/model/UiNodeImageAttributesTest.java
 src/test/java/sh/ory/kratos/model/UiNodeInputAttributesTest.java
 src/test/java/sh/ory/kratos/model/UiNodeMetaTest.java
@@ -387,6 +405,7 @@ src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithLookupSecretMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithOidcMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithPasskeyMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithPasswordMethodTest.java
+src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithSamlMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithTotpMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateLoginFlowWithWebAuthnMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateRecoveryFlowBodyTest.java
@@ -398,6 +417,7 @@ src/test/java/sh/ory/kratos/model/UpdateRegistrationFlowWithOidcMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateRegistrationFlowWithPasskeyMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateRegistrationFlowWithPasswordMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateRegistrationFlowWithProfileMethodTest.java
+src/test/java/sh/ory/kratos/model/UpdateRegistrationFlowWithSamlMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateRegistrationFlowWithWebAuthnMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowBodyTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithLookupMethodTest.java
@@ -405,6 +425,7 @@ src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithOidcMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithPasskeyMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithPasswordMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithProfileMethodTest.java
+src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithSamlMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithTotpMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateSettingsFlowWithWebAuthnMethodTest.java
 src/test/java/sh/ory/kratos/model/UpdateVerificationFlowBodyTest.java
